@@ -1,27 +1,29 @@
 # Distributed File Storage
 
-Project Fluffy is an open-source, scalable, decentralized, robust, heterogeneous file storage solution which ensures that multiple servers can inter-operate to form a dynamic ‘overlay’ fabric.
-The system supports some important design aspects such as -
-- Language Agnostic
-- System failure & recovery
-- Work-stealing algorithms
-- Scalability
-- Robustness
-- Queues to serve multiple requests simultaneously
-- Cluster Consensus (RAFT)
-- Data Replication
-- Caching Optimization
-- Efficient Searching
-##### The following user services are currently supported (with an option to modularly add new services at any time) - 
+This project presents an open-source, scalable, and robust distributed storage solution. It enables multiple servers to collaborate, forming a dynamic 'overlay' network.
+Key features include:
 
-    1. File Upload (supports any file type - pdf, img, avi, txt, mp4, xml, json, m4v, etc.)
+- Platform independence
+- Fault tolerance and recovery
+- Adaptive task distribution
+- Extensibility
+- Resilience
+- Concurrent request handling
+- Distributed consensus (RAFT)
+- Data redundancy
+- Enhanced caching
+- Optimized search functionality
+
+##### Supported user services (expandable): - 
+
+    1. File Upload (all formats)
     2. File Download
     3. File Search
-    4. File List (Lists all files on the system that belong to a specific user)
-    5. File Delete
-    6. File Update
+    4. File Listing (user-specific)
+    5. File Deletion
+    6. File Modification
 
-This system allows many clients to have access to data and supports operations (create, delete, modify, read, write) on that data. Each data file is partitioned into several parts called chunks. Each chunk is stored on different remote machines, facilitating the parallel execution of applications.
+The system facilitates multi-client data access and supports CRUD operations. Files are segmented into chunks, distributed across remote machines for parallel processing.
 
 ****************************************************************************************************************
 
@@ -39,17 +41,18 @@ This system allows many clients to have access to data and supports operations (
 
 ****************************************************************************************************************
 
-### Usage
-- install all depenedencies as mentioned in requirements.txt
-- Check config.yaml to configure the server IPs and other parameters. 
-- Update iptable.txt to incude all the IPs in your cluster (for each individual cluster)
+### Setup Instructions
+- Install dependencies from requirements.txt
+- Configure server IPs and parameters in config.yaml
+- Update iptable.txt with cluster IPs
 
-#### Starting supernode
+#### Launch Supernode
 ```
 python3 supernode.py
 ```
 
-#### Strating cluster nodes
+#### Launch Cluster Nodes
+
 ```
 python3 server.py four
 ```
@@ -60,7 +63,7 @@ python3 server.py five
 python3 server.py six
 ```
 
-#### Starting client
+#### Launch Client
 ```
 python3 client.py
 ```
