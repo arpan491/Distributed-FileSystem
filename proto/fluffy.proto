@@ -15,7 +15,6 @@ service DataTransferService {
   rpc ReplicateFile(stream FileData) returns (FileInfo);
   rpc ListFiles (RequestFileList) returns (FileList);
 }
-
 message FileData {
 	string fileName = 1;
 	bytes data = 2;

@@ -22,6 +22,7 @@ def getFileData():
     fileData = fileService_pb2.FileData(fileName=fileName, data=file_data)
     return fileData
 
+
 def getFileChunks():
      # Maximum chunk size that can be sent
     CHUNK_SIZE=4000000
