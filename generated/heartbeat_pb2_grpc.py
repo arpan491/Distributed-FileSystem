@@ -3,7 +3,6 @@ import grpc
 
 import heartbeat_pb2 as heartbeat__pb2
 
-
 class HearBeatStub(object):
   """The heartbeat service definition.
   """

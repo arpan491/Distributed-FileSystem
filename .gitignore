@@ -7,3 +7,4 @@ utils/__pycache__
 proto/__pycache__
 service/__pycache__
 generated/__pycache__
+temp.sh
